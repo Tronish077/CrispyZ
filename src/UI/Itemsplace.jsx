@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import Cardproduct from "../Components/Cardproduct";
-import { MutatingDots, Puff } from "react-loader-spinner";
+import { MutatingDots} from "react-loader-spinner";
 import { apiinfo } from "../Contexts/apiinfo";
 
 
