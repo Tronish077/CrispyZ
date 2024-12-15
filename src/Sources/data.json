@@ -1,0 +1,102 @@
+{
+    "Products":[
+
+    {"id":1,
+    "imagesrc":"https://static.vecteezy.com/system/resources/previews/023/522/925/non_2x/beef-burger-cutout-free-png.png",
+    "name":"Beef Burger",
+    "price":120,
+    "category":"burgers"
+},{ 
+    "id":2,
+    "imagesrc":"https://static.vecteezy.com/system/resources/previews/046/791/327/non_2x/fried-chicken-with-mayonnaise-and-french-fries-free-png.png",
+    "name":"Fries'n Chicken ",
+    "price":250,
+    "category":"combos"
+},{ 
+    "id":3,
+    "imagesrc":"https://static.vecteezy.com/system/resources/previews/041/645/687/non_2x/ai-generated-fried-chicken-in-paper-bucket-on-transparent-background-image-free-png.png",
+    "name":"Chicken Popcorn",
+    "price":165,
+    "category":"lunch"
+},{ 
+    "id":4,
+    "imagesrc":"https://static.vecteezy.com/system/resources/previews/032/322/171/non_2x/image-of-delicious-looking-fajitas-ai-generated-free-png.png",
+    "name":"Italian Burrito",
+    "price":80,
+    "category":"lunch"
+},{
+    "id":5,
+    "imagesrc":"https://static.vecteezy.com/system/resources/previews/048/936/308/non_2x/bowl-of-rice-with-vegetables-in-a-black-bowl-free-png.png",
+    "name":"Egg-Fried Rice",
+    "price":90,
+    "category":"veg"
+},{
+    "id":6,
+    "imagesrc":"https://static.vecteezy.com/system/resources/previews/025/140/288/non_2x/chocolate-milkshake-on-plastic-cup-transparent-background-ai-generated-free-png.png",
+    "name":"Choco Shake",
+    "price":100,
+    "category":"creams"
+},{
+    "id":7,
+    "imagesrc":"https://static.vecteezy.com/system/resources/previews/038/776/933/non_2x/ai-generated-of-pizza-against-transparent-background-free-png.png",
+    "name":"Pepperoni Pizza",
+    "price":220,
+    "category":"lunch"
+},
+    {
+        "id":8,
+        "imagesrc":"https://static.vecteezy.com/system/resources/previews/025/065/286/non_2x/french-fries-with-ai-generated-free-png.png",
+        "name":"French Fries",
+        "price":60,
+        "category":"lunch"
+    },
+    {
+        "id":9,
+        "imagesrc":"https://static.vecteezy.com/system/resources/previews/046/909/043/non_2x/delicious-chicken-shawarma-kebab-isolated-on-a-transparent-background-free-png.png",
+        "name":"Chicken-Wrap",
+        "price":80,
+        "category":"lunch"
+    },{
+        "id":10,
+        "imagesrc":"https://static.vecteezy.com/system/resources/previews/048/718/647/non_2x/bowl-of-cooked-noodles-on-transparent-background-free-png.png",
+        "name":"Veg Noodles",
+        "price":85,
+        "category":"veg and lunch"
+    },{
+        "id":11,
+        "imagesrc":"https://static.vecteezy.com/system/resources/previews/052/243/815/non_2x/delicious-pancake-with-fruits-and-honey-isolated-on-transparent-background-free-png.png",
+        "name":"Breakfast Pancakes (6)",
+        "price":75,
+        "category":"breakfast"
+    },{
+        "id":12,
+        "imagesrc":"https://static.vecteezy.com/system/resources/previews/025/063/627/large_2x/ice-cream-sundae-with-ai-generated-free-png.png",
+        "name":"Mixed Sundae",
+        "price":135,
+        "category":"creams"
+    },{
+            "id":13,
+            "imagesrc":"https://static.vecteezy.com/system/resources/thumbnails/051/779/066/small/cinnamon-roll-with-cream-topping-for-delicious-dessert-and-bakery-imagery-free-png.png",
+            "name":"Cinnamon Rolls (3)",
+            "price":95,
+            "category":"breakfast"
+        },{
+            "id":14,
+            "imagesrc":"https://static.vecteezy.com/system/resources/previews/035/675/841/non_2x/ai-generated-strawberry-smoothie-in-a-glass-free-png.png",
+            "name":"Strawberry Smoothie",
+            "price":120,
+            "category":"creams"
+        },{
+            "id":15,
+            "imagesrc":"https://static.vecteezy.com/system/resources/previews/048/363/440/non_2x/national-cheeseburger-day-isolated-on-transparent-background-free-png.png",
+            "name":"Tikki Burger",
+            "price":100,
+            "category":"lunch , burgers and veg"
+        },{
+            "id":16,
+            "imagesrc":"https://static.vecteezy.com/system/resources/thumbnails/044/627/223/small/3d-rendering-of-a-chili-cheese-fries-on-transparent-background-png.png",
+            "name":"Cheese Fries",
+            "price":85,
+            "category":"lunch"
+        }
+    ]}
