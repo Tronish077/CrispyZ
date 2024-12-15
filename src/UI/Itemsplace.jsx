@@ -1,24 +1,37 @@
 import { useContext, useEffect, useState } from "react";
 import Cardproduct from "../Components/Cardproduct";
+import noItems from '../media/images/dropvector.png'
 import { MutatingDots} from "react-loader-spinner";
 import { apiinfo } from "../Contexts/apiinfo";
+import { getcategory } from "../Contexts/getcategory";
 
 
 function Itemsplace(){
     
     const [items,setItems] = useState([]);  
     const {apidata} = useContext(apiinfo);
+    const [isZero,setIszero] = useState(true);
+    const {currentcat} = useContext(getcategory);
+
 
     useEffect(() => {
         if (Array.isArray(apidata)) {
             setItems(apidata);
+            apidata.length === 0 ? setIszero(true) : setIszero(false);
         }
-        
     }, [apidata]);
 
-    if(apidata.length > 2){
+            if(isZero && currentcat == "hotdeals")
+               {
+                return(<div className="Itemsplace flex flex-col items-center justify-center  gap-6">
+                         <h2 className="text-black text-2xl">Nothing To see Here Yet !!!</h2>
+                        <img src={noItems} className="h-80"/>
+                    </div>)
+            }
 
-                return(<div className="Itemsplace flex  gap-6">
+            else if(apidata.length > 0){
+
+                return(<div className="Itemsplace flex  gap-6 ">
                             { 
                                 items.map((item)=>{
                                     return(
@@ -28,7 +41,9 @@ function Itemsplace(){
                             }
                         
                     </div>)
-            }else{
+            }
+
+            else{
 
         return(<div className="Itemsplace flex flex-col items-center justify-center  gap-6">
                                 <MutatingDots

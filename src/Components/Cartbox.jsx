@@ -1,4 +1,4 @@
-import { useState,useContext} from "react";
+import { useState,useContext, useEffect} from "react";
 import { cartcontext } from "../Contexts/cartcontext";
 import { totalcontext } from "../Contexts/totalscontext.jsx";
 import Cartcard from "./Cartcard.jsx";
@@ -7,11 +7,16 @@ function Cartbox(){
 
     const [selected,setSelect] = useState("p2");
     const {cart} = useContext(cartcontext);
+    const [cartEmpty,setCartEmpty] = useState(true); //State for checking if cart is empty
     const [subtotal, setsubtotal] = useState(0);
 
     function bgred(id){
         setSelect(id);
     }
+
+    useEffect(()=>{
+        cart.length > 0 ? setCartEmpty(false) : setCartEmpty(true);
+    },[cart])
 
     const formatCurrency = (amount) => {
         return new Intl.NumberFormat('en-IN', {
@@ -32,8 +37,20 @@ function Cartbox(){
                     
                     
                     <span className="border mt-3 h-96 rounded-lg overflow-scroll">
-                        {
-                            cart.map((item,index)=>{
+
+                    {
+                        cartEmpty && (
+                            <div className="flex flex-col justify-center items-center">
+                                <img 
+                                src="https://img.freepik.com/premium-vector/plastic-shopping-basket-store-stock-vector-illustration_110233-4738.jpg"
+                                className="h-60">
+                                </img>
+                                <p className="text-black ">==== No Items Added To Cart ====</p>
+                            </div>
+                        )
+                    }
+
+                        {      cart.map((item,index)=>{
                                 return(
                                 <Cartcard key={index} image={item.imgsrc} name={item.name} price={item.price}/>
                                 )

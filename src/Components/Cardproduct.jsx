@@ -1,8 +1,10 @@
 import { useContext, useEffect, useState } from "react";
+import { ColorRing} from "react-loader-spinner";
 import { cartcontext } from "../Contexts/cartcontext";
 function Cardproduct(props){
 
     const {cart,setcart} = useContext(cartcontext);
+    const [Loading, setLoading] = useState(true);
     
     function addfav(e){
         e.innerText == "cardio_load" ? e.innerText="favorite" : e.innerText="cardio_load" ;
@@ -30,7 +32,28 @@ function Cardproduct(props){
     }
 
     return(<div className="cartproduct flex flex-col justify-center h-max  p-2">
-                <img src={props.image}/>
+                {
+                    Loading &&(
+                        <div className="loader">
+                           <ColorRing
+                                visible={true}
+                                height="80"
+                                width="80"
+                                ariaLabel="color-ring-loading"
+                                wrapperStyle={{}}
+                                wrapperClass="color-ring-wrapper"
+                                colors={['red','rgb(220 38 38)','maroon','tomato','pink']}
+                                />
+                        </div>
+                    )
+                }
+                
+                <img 
+                    src={props.image}
+                    onLoad={()=>setLoading(false)}
+                    onError={()=>setLoading(true)}
+                    style = {{display: Loading ? "none" : "block"}}
+                    />
                 <p className="text-black">{props.name}</p>
                 <span className="flex gap-20 text-red-600 items-center my-0.5">
                     <p className="flex items-center text-lg font-semibold">&#x20b9;<p>{props.price}</p></p>
