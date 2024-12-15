@@ -197,3 +197,10 @@
   height:98.5vh;
   padding:12px 8px;
 }
+
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:19.05vh;
+}

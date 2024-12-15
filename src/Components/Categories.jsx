@@ -1,4 +1,5 @@
 import { useState,useContext,useEffect } from "react";
+import { getcategory } from "../Contexts/getcategory";
 import { apiinfo } from "../Contexts/apiinfo";
 import { dummyapi } from "../Contexts/apiinfo";
 
@@ -8,13 +9,18 @@ function Categories() {
     const [originalData, setOriginalData] = useState([]);
     const [selected, setSelected] = useState("all");
 
+
+    const {currentcat,setcurrentcat} = useContext(getcategory); //get the categories contextapi
+
     useEffect(() => {
         setOriginalData(dummydata);
         setdummy(originalData);
     },[apidata]);
 
-    function bgred(id) {
+    function bgred(id,category) {
         setSelected(id);
+        setcurrentcat(category); // sets the category context to the selected category
+        
     }
 
     function filtercats(any) {
@@ -47,7 +53,7 @@ function Categories() {
                 const highlight = selected === id;
 
                 return (
-                    <span className={`w-26 px-2 p-1 rounded hover:bg-red-100 ease-in duration-300 cursor-pointer ${highlight ? "bg-red-600 text-white" : "bg-white text-black"}`} key={id} category={obj[index].category} onClick={() => { bgred(id);filtercats(obj[index].category) }}>
+                    <span className={`w-26 px-2 p-1 rounded hover:bg-red-100 ease-in duration-300 cursor-pointer ${highlight ? "bg-red-600 text-white" : "bg-white text-black"}`} key={id} category={obj[index].category} onClick={() => { bgred(id,obj[index].category);filtercats(obj[index].category) }}>
                         <span className={`material-symbols-rounded text-2xl ${highlight ? "text-white" : "text-red-600"}`}>{obj[index].icon}</span>
                         <p>{obj[index].title}</p>
                         <p className={`text-xs ${highlight ? "text-white" : "text-gray-500"} font-medium`}>{obj[index].subtitle}</p>
