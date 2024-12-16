@@ -9,13 +9,20 @@ function Cartbox(){
     const {cart} = useContext(cartcontext);
     const [cartEmpty,setCartEmpty] = useState(true); //State for checking if cart is empty
     const [subtotal, setsubtotal] = useState(0);
+    const [checkout, setcheckout] = useState(false);
 
     function bgred(id){
         setSelect(id);
     }
 
     useEffect(()=>{
-        cart.length > 0 ? setCartEmpty(false) : setCartEmpty(true);
+        if(cart.length > 0){
+            setCartEmpty(false);
+            setcheckout(true) }
+            else{
+                 setCartEmpty(true);
+                 setcheckout(false);
+            }
     },[cart])
 
     const formatCurrency = (amount) => {
@@ -40,12 +47,13 @@ function Cartbox(){
 
                     {
                         cartEmpty && (
-                            <div className="flex flex-col justify-center items-center">
+                            <div className="flex flex-col justify-center items-center h-full">
                                 <img 
                                 src="https://img.freepik.com/premium-vector/plastic-shopping-basket-store-stock-vector-illustration_110233-4738.jpg"
-                                className="h-60">
+                                className="h-32">
                                 </img>
-                                <p className="text-black ">==== No Items Added To Cart ====</p>
+                                <p className="text-black text-xl m-2">Your Cart is Empty</p>
+                                <p className="text-zinc-400 text-sm text-center font-light">Fill Up your cart with All The Meals <br/> Your Craving For Today !!</p>
                             </div>
                         )
                     }
@@ -101,7 +109,7 @@ function Cartbox(){
 
                         return(
                             <span key={id} className="flex flex-col items-center">
-                                <span className={`material-symbols-rounded text-3xl hover:bg-red-100 pmeths ${highlight ? "text-white bg-red-600" : "text-black"}`} onClick={(e)=>bgred(id)}>{obj[index].icon}</span>
+                                <span className={`material-symbols-rounded text-3xl hover:bg-red-100 pmeths ${highlight ? "text-white bg-red-600" : "text-black"}`} onClick={()=>bgred(id)}>{obj[index].icon}</span>
                                 <p className="text-black">{obj[index].title}</p>
                             </span>
                         )
@@ -109,7 +117,7 @@ function Cartbox(){
                     })}
                 </span>
 
-                <button className="flex text-gray-300 border-2 justify-center items-center gap-4 h-16 rounded-md text-lg hover:bg-red-600 hover:text-white hover:border-0 ">
+                <button className={`flex text-gray-300 border-2 justify-center items-center gap-4 h-16 rounded-md text-lg ${checkout ? "bg-red-600 text-zinc-100 border-0": "cursor-not-allowed"} `}  disabled={!checkout}>
                     <span className="material-symbols-rounded">shopping_cart_checkout</span>
                     Process To CheckOut
                 </button>

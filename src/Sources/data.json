@@ -5,41 +5,48 @@
     "imagesrc":"https://static.vecteezy.com/system/resources/previews/023/522/925/non_2x/beef-burger-cutout-free-png.png",
     "name":"Beef Burger",
     "price":120,
+    "desc":"Italiano Beef burger With Cheese and Mustard",
     "category":"burgers"
 },{ 
     "id":2,
     "imagesrc":"https://static.vecteezy.com/system/resources/previews/046/791/327/non_2x/fried-chicken-with-mayonnaise-and-french-fries-free-png.png",
     "name":"Fries'n Chicken ",
+    "desc":"Full plate Of Fries and Chicken (4) Pcs",
     "price":250,
     "category":"combos"
 },{ 
     "id":3,
     "imagesrc":"https://static.vecteezy.com/system/resources/previews/041/645/687/non_2x/ai-generated-fried-chicken-in-paper-bucket-on-transparent-background-image-free-png.png",
     "name":"Chicken Popcorn",
+    "desc":"A whole Bucket'O chicken Drumsticks (8) Pcs",
     "price":165,
     "category":"lunch"
 },{ 
     "id":4,
     "imagesrc":"https://static.vecteezy.com/system/resources/previews/032/322/171/non_2x/image-of-delicious-looking-fajitas-ai-generated-free-png.png",
     "name":"Italian Burrito",
+    "desc":"Famous italian Burrito With Beef Pieces wrapped",
     "price":80,
     "category":"lunch"
 },{
     "id":5,
     "imagesrc":"https://static.vecteezy.com/system/resources/previews/048/936/308/non_2x/bowl-of-rice-with-vegetables-in-a-black-bowl-free-png.png",
     "name":"Egg-Fried Rice",
+    "desc":"Plain Egg Fried Rice Medium Spices",
     "price":90,
     "category":"veg"
 },{
     "id":6,
     "imagesrc":"https://static.vecteezy.com/system/resources/previews/025/140/288/non_2x/chocolate-milkshake-on-plastic-cup-transparent-background-ai-generated-free-png.png",
     "name":"Choco Shake",
+    "desc":"Creamy Chocolate Treat with Chocolate Chips",
     "price":100,
     "category":"creams"
 },{
     "id":7,
     "imagesrc":"https://static.vecteezy.com/system/resources/previews/038/776/933/non_2x/ai-generated-of-pizza-against-transparent-background-free-png.png",
     "name":"Pepperoni Pizza",
+    "desc":"Pepperoni Pizza for and with Size: Medium 8 Slices",
     "price":220,
     "category":"lunch"
 },
@@ -47,6 +54,7 @@
         "id":8,
         "imagesrc":"https://static.vecteezy.com/system/resources/previews/025/065/286/non_2x/french-fries-with-ai-generated-free-png.png",
         "name":"French Fries",
+        "desc":"Normal Plain French Fries with Sauce",
         "price":60,
         "category":"lunch"
     },
@@ -54,48 +62,56 @@
         "id":9,
         "imagesrc":"https://static.vecteezy.com/system/resources/previews/046/909/043/non_2x/delicious-chicken-shawarma-kebab-isolated-on-a-transparent-background-free-png.png",
         "name":"Chicken-Wrap",
+        "desc":"Medium Sized Chicken Wrap Grilled",
         "price":80,
         "category":"lunch"
     },{
         "id":10,
         "imagesrc":"https://static.vecteezy.com/system/resources/previews/048/718/647/non_2x/bowl-of-cooked-noodles-on-transparent-background-free-png.png",
         "name":"Veg Noodles",
+        "desc":" Small Container of Hakka noodle Medium Spice",
         "price":85,
         "category":"veg and lunch"
     },{
         "id":11,
         "imagesrc":"https://static.vecteezy.com/system/resources/previews/052/243/815/non_2x/delicious-pancake-with-fruits-and-honey-isolated-on-transparent-background-free-png.png",
-        "name":"Breakfast Pancakes (6)",
+        "name":"Breakfast Pancakes",
+        "desc":"Morning Treat of Breakfast pancakes 6 Slices",
         "price":75,
         "category":"breakfast"
     },{
         "id":12,
         "imagesrc":"https://static.vecteezy.com/system/resources/previews/025/063/627/large_2x/ice-cream-sundae-with-ai-generated-free-png.png",
         "name":"Mixed Sundae",
+        "desc":"Flavours: choco,strawberry N Vanilla",
         "price":135,
         "category":"creams"
     },{
             "id":13,
             "imagesrc":"https://static.vecteezy.com/system/resources/thumbnails/051/779/066/small/cinnamon-roll-with-cream-topping-for-delicious-dessert-and-bakery-imagery-free-png.png",
             "name":"Cinnamon Rolls (3)",
+            "desc":"Cream Sprinkled Cinamon Rolls",
             "price":95,
             "category":"breakfast"
         },{
             "id":14,
             "imagesrc":"https://static.vecteezy.com/system/resources/previews/035/675/841/non_2x/ai-generated-strawberry-smoothie-in-a-glass-free-png.png",
             "name":"Strawberry Smoothie",
+            "desc":"Just a Chill Strawberry Smoothie for a chill Day innit",
             "price":120,
             "category":"creams"
         },{
             "id":15,
             "imagesrc":"https://static.vecteezy.com/system/resources/previews/048/363/440/non_2x/national-cheeseburger-day-isolated-on-transparent-background-free-png.png",
             "name":"Tikki Burger",
+            "desc":"India's Loved Tikki Burger straight to Your Tummy",
             "price":100,
             "category":"lunch , burgers and veg"
         },{
             "id":16,
             "imagesrc":"https://static.vecteezy.com/system/resources/thumbnails/044/627/223/small/3d-rendering-of-a-chili-cheese-fries-on-transparent-background-png.png",
-            "name":"Cheese Fries",
+            "name":"Chilli Cheese Fries",
+            "desc":"cheese Fries With Mexican Spices Medium",
             "price":85,
             "category":"lunch"
         }

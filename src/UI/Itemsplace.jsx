@@ -31,11 +31,11 @@ function Itemsplace(){
 
             else if(apidata.length > 0){
 
-                return(<div className="Itemsplace flex  gap-6 ">
+                return(<div className="Itemsplace flex  gap-5 ">
                             { 
                                 items.map((item)=>{
                                     return(
-                                        <Cardproduct key={item.id} name={item.name} price={item.price} image={item.imagesrc}/>
+                                        <Cardproduct key={item.id} name={item.name} price={item.price} image={item.imagesrc} desc={item.desc}/>
                                     )
                                 })
                             }

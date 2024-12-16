@@ -152,7 +152,7 @@
   background: white;
   display: flex;
   flex-wrap: wrap;
-  padding:2px;
+  padding:8px 1.5px;
   width:100%;
   margin-top:1.5vh;
   height:80%;
@@ -172,10 +172,32 @@
 }
 
 .cartproduct{
-  width:180px;
+  width:268px;
+  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+  border-radius: 10px;
 }
 
 .cartproduct img{
+  margin:0.5vw;
+  background: whitesmoke;
+  border-radius: 8px;
+  object-fit: contain;
+  height:85px;
+}
+
+
+
+.hotproduct{
+  width:280px;
+  background: rgb(255, 255, 255);
+}
+
+.hotproduct .name{
+  color:blue;
+  padding:5px 0px;
+}
+
+.hotproduct img{
   background: whitesmoke;
   border-radius: 8px;
   object-fit: contain;

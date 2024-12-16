@@ -1,10 +1,18 @@
 import { useContext, useEffect, useState } from "react";
 import { ColorRing} from "react-loader-spinner";
+import {getcategory} from '../Contexts/getcategory'
 import { cartcontext } from "../Contexts/cartcontext";
 function Cardproduct(props){
 
     const {cart,setcart} = useContext(cartcontext);
+    const {currentcat,setcurrentcat} = useContext(getcategory);
     const [Loading, setLoading] = useState(true);
+    const [onHots,setHots] = useState(false);
+
+
+    useEffect(()=>{
+        currentcat == "hotdeals" ? setHots(true) : setHots(false);
+    },[currentcat]) //To Ccheck If we are in the Hotdeals Category
     
     function addfav(e){
         e.innerText == "cardio_load" ? e.innerText="favorite" : e.innerText="cardio_load" ;
@@ -12,9 +20,9 @@ function Cardproduct(props){
 
       //adding Item to cart Function
     function constItem(ele){ 
-       let imgsrc = ele.parentElement.childNodes[0].src;
-       let name = ele.parentElement.childNodes[1].innerText;
-       let price = ele.parentElement.childNodes[2].childNodes[0].childNodes[1].childNodes[0].data;
+       let imgsrc = ele.parentElement.parentElement.parentElement.childNodes[0].src;
+       let name = ele.parentElement.parentElement.childNodes[0].innerText;
+       let price = ele.parentElement.parentElement.childNodes[2].childNodes[0].childNodes[1].childNodes[0].data;
        const objnow = {imgsrc,name,price};
        let found = false;
 
@@ -22,7 +30,9 @@ function Cardproduct(props){
        if(cart.length > 0) {
                 if(cart.some(item => item.name == objnow.name)){found = true;}
 
-                if(!found){setcart(prev => [...prev,objnow])};
+                if(!found){
+                    setcart(prev => [...prev,objnow]);
+                    };
 
             }        
         else{
@@ -31,7 +41,7 @@ function Cardproduct(props){
        
     }
 
-    return(<div className="cartproduct flex flex-col justify-center h-max  p-2">
+    return(<div className={`${onHots ? "hotproduct": "cartproduct"} flex  items-center h-max p-1`}>
                 {
                     Loading &&(
                         <div className="loader">
@@ -54,15 +64,25 @@ function Cardproduct(props){
                     onError={()=>setLoading(true)}
                     style = {{display: Loading ? "none" : "block"}}
                     />
-                <p className="text-black">{props.name}</p>
-                <span className="flex gap-20 text-red-600 items-center my-0.5">
-                    <p className="flex items-center text-lg font-semibold">&#x20b9;<p>{props.price}</p></p>
-                    <span className=" text-md material-symbols-rounded cursor-pointer" title="Add to Favorites" onClick={(e)=>addfav(e.target)}>favorite</span>
+
+                <span className="flex flex-col">
+                    <p className=" name text-black">{props.name}</p>
+                    <p className="text-zinc-400 text-xs text-light">{props.desc}</p>
+
+                    { onHots ? <p className="text-green-200 bg-red-800 w-max p-0.5 radius-medium">Friday Special 🔥</p> : <></>}
+                    <span className=" grid grid-cols-2 text-red-600 items-center">
+                        <p className="flex items-center text-lg font-semibold">&#x20b9;<p>{props.price}</p></p>
+                        <span>
+                             <span className="text-md material-symbols-rounded cursor-pointer mx-1 w-max float-end" title="Add to Favorites" onClick={(e)=>addfav(e.target)}>favorite</span>
+                        </span>
+                    </span>
+
+                    <span className="px-1 py-0.5">
+                    <button className="bg-red-400 hover:bg-red-500 flex items-center gap-2 py-2 px-3 rounded-md w-max float-end" onClick={(e)=>{constItem(e.target)}}>
+                        Add Item<span className="material-symbols-rounded">add_shopping_cart</span>
+                    </button>
+                    </span>
                 </span>
-                <button className="bg-red-400 hover:bg-red-500 flex items-center gap-2 py-2 px-3 rounded-md" onClick={(e)=>{constItem(e.target)}}>
-                    <span className="material-symbols-rounded">add_shopping_cart</span>
-                    Add To Cart
-                </button>
         </div>
         )
 }
