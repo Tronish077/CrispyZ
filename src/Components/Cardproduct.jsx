@@ -7,6 +7,8 @@ function Cardproduct(props){
     const {cart,setcart} = useContext(cartcontext);
     const {currentcat,setcurrentcat} = useContext(getcategory);
     const [Loading, setLoading] = useState(true);
+    const [isHover,setHover] = useState(false);
+    const [fullscr,setfullscr] = useState(false);
     const [onHots,setHots] = useState(false);
 
 
@@ -20,7 +22,7 @@ function Cardproduct(props){
 
       //adding Item to cart Function
     function constItem(ele){ 
-       let imgsrc = ele.parentElement.parentElement.parentElement.childNodes[0].src;
+       let imgsrc = ele.parentElement.parentElement.parentElement.childNodes[0].childNodes[0].src;
        let name = ele.parentElement.parentElement.childNodes[0].innerText;
        let price = ele.parentElement.parentElement.childNodes[2].childNodes[0].childNodes[1].childNodes[0].data;
        const objnow = {imgsrc,name,price};
@@ -41,7 +43,7 @@ function Cardproduct(props){
        
     }
 
-    return(<div className={`${onHots ? "hotproduct": "cartproduct"} flex  items-center h-max p-1`}>
+    return(<div className={`${onHots ? "hotproduct": "cartproduct"} flex  items-center h-max p-1 relative`} >
                 {
                     Loading &&(
                         <div className="loader">
@@ -57,12 +59,20 @@ function Cardproduct(props){
                         </div>
                     )
                 }
+
+                
+                    <span className={`fullImage ${isHover ? "absolute flex" : "hidden"}`}>
+                        <img src={props.image} className={`${fullscr ? "block" : "none"}`}/>
+                    </span>
                 
                 <img 
                     src={props.image}
+                    onMouseOver={()=>setHover(true)}
+                    onMouseLeave={()=>setHover(false)}
                     onLoad={()=>setLoading(false)}
                     onError={()=>setLoading(true)}
                     style = {{display: Loading ? "none" : "block"}}
+                    className="hover:bg-gray-200 hover:cursor-pointer"
                     />
 
                 <span className="flex flex-col">

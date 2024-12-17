@@ -31,7 +31,8 @@ function Itemsplace(){
 
             else if(apidata.length > 0){
 
-                return(<div className="Itemsplace flex  gap-5 ">
+                return(<div className="Itemsplace flex p-8 gap-5 ">
+                        
                             { 
                                 items.map((item)=>{
                                     return(

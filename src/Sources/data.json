@@ -114,5 +114,12 @@
             "desc":"cheese Fries With Mexican Spices Medium",
             "price":85,
             "category":"lunch"
+        },{
+            "id":17,
+            "imagesrc":"https://static.vecteezy.com/system/resources/previews/052/244/428/non_2x/tray-of-assorted-fried-chicken-on-a-transparent-background-free-png.png",
+            "name":"Chicken mania",
+            "desc":"Pack of Drumsticks Just For You (12 pcs)",
+            "price":"110",
+            "category":"hotdeals"
         }
     ]}
