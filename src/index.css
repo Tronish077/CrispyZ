@@ -1,6 +1,5 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   font-weight: 500;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -93,7 +92,7 @@
 }
 
 .sidelinks{
-  border-radius: 10px;
+  border-radius: 8px;
   transition: .6s;
 }
 
@@ -157,6 +156,8 @@
   height:560px;
   overflow-y: scroll;
   display:flex;
+  padding:8px;
+  align-content: start;
   flex-wrap:wrap;
   width: 100%;
   gap:10px;
@@ -176,7 +177,8 @@
 
 .cartproduct{
   width:268px;
-  height:135px;
+  padding: 8px;
+  height:150px;
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
   border-radius: 10px;
 }
@@ -210,8 +212,8 @@
 
 .hotproduct{
   background:linear-gradient(240deg,orange,red);
-  width:268px;
-  height:165px;
+  width:272px;
+  height:168px;
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
   border-radius: 10px;
 }
@@ -225,7 +227,7 @@
   border-radius: 10px;
   object-fit: cover;
   background: red;
-  height:80px;
+  height:100px;
   margin:0 8px;
 }
 
