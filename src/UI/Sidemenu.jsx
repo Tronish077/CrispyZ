@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import {getcategory} from '../Contexts/getcategory'
 import logo from '../media/logo.png'
 import { Link } from 'react-router-dom';
 
 function Sidemenu(){
 
     const [selected,setSelected] = useState("l1");
+    const {currentcat,setcurrentcat} = useContext(getcategory);
 
     function makeHighlight(id){
         setSelected(id)
+        setcurrentcat('all')
     }
 
     return(<div className="sidemenu">

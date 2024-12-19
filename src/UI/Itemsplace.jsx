@@ -15,12 +15,14 @@ function Itemsplace(){
 
 
     useEffect(() => {
+        
         if (Array.isArray(apidata)) {
             setItems(apidata);
             apidata.length === 0 ? setIszero(true) : setIszero(false);
         }
     }, [apidata]);
 
+                //Load a vector if No Crazy deal meals available
             if(isZero && currentcat == "hotdeals")
                {
                 return(<div className="Itemsplace flex flex-col items-center justify-center  gap-6">
@@ -29,20 +31,36 @@ function Itemsplace(){
                     </div>)
             }
 
+                //Render all Items except hotdeals
             else if(apidata.length > 0){
-
-                return(<div className="Itemsplace flex  gap-5 ">
+                return(<div className="Itemsplace">
+                        
                             { 
                                 items.map((item)=>{
-                                    return(
-                                        <Cardproduct key={item.id} name={item.name} price={item.price} image={item.imagesrc} desc={item.desc}/>
-                                    )
-                                })
-                            }
-                        
-                    </div>)
-            }
 
+                                        //Conditional Render Based On Categories
+                                    if(currentcat != "hotdeals"){
+
+                                        if(item.category !== "hotdeals"){
+                                            return(
+                                                <Cardproduct key={item.id} name={item.name} price={item.price} image={item.imagesrc} desc={item.desc}/>
+                                            )
+                                        }
+
+                                        }else{
+                                        return(
+                                            <Cardproduct key={item.id} name={item.name} price={item.price} image={item.imagesrc} desc={item.desc}/>
+                                        )
+                                    }
+                                    
+                                }  
+
+                        )}
+
+                    </div>
+            )}
+
+                //Use Loader Screen On Items Delay
             else{
 
         return(<div className="Itemsplace flex flex-col items-center justify-center  gap-6">
