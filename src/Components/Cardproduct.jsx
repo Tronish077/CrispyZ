@@ -24,10 +24,11 @@ function Cardproduct(props){
     function constItem(ele){ 
        let imgsrc = ele.parentElement.parentElement.parentElement.childNodes[0].childNodes[0].src;
        let name = ele.parentElement.parentElement.childNodes[0].innerText;
-       let price = ele.parentElement.parentElement.childNodes[2].childNodes[0].childNodes[1].childNodes[0].data;
+       let price = !onHots ?  ele.parentElement.parentElement.childNodes[2].childNodes[0].childNodes[1].childNodes[0].data :ele.parentElement.parentElement.childNodes[3].childNodes[0].childNodes[1].childNodes[0].data ;
        const objnow = {imgsrc,name,price};
        let found = false;
 
+       
         // To check If item is already Available in Cart
        if(cart.length > 0) {
                 if(cart.some(item => item.name == objnow.name)){found = true;}
@@ -43,7 +44,7 @@ function Cardproduct(props){
        
     }
 
-    return(<div className={`${onHots ? "hotproduct": "cartproduct"} flex  items-center h-max p-1 relative`} >
+    return(<div className={`${onHots ? "hotproduct": "cartproduct"} flex  items-center relative`} >
                 {
                     Loading &&(
                         <div className="loader">
@@ -61,13 +62,13 @@ function Cardproduct(props){
                 }
 
                 
-                    <span className={`fullImage ${isHover ? "absolute flex" : "hidden"}`}>
+                    <span className={`fullImage ${isHover ? !onHots? "absolute flex" : "hidden": "hidden"}`}>
                         <img src={props.image} className={`${fullscr ? "block" : "none"}`}/>
                     </span>
                 
                 <img 
                     src={props.image}
-                    onMouseOver={()=>setHover(true)}
+                    onMouseOver={()=> setHover(true)}
                     onMouseLeave={()=>setHover(false)}
                     onLoad={()=>setLoading(false)}
                     onError={()=>setLoading(true)}
@@ -77,18 +78,18 @@ function Cardproduct(props){
 
                 <span className="flex flex-col">
                     <p className=" name text-black">{props.name}</p>
-                    <p className="text-zinc-400 text-xs text-light">{props.desc}</p>
+                    <p className={`text-xs ${ onHots ? "text-zinc-100" :"text-zinc-400"} text-light`}>{props.desc}</p>
 
-                    { onHots ? <p className="text-green-200 bg-red-800 w-max p-0.5 radius-medium">Friday Special 🔥</p> : <></>}
+                    { onHots ? <p className=" special text-green-200 w-max  radius-medium">Todays Deal !! 🔥</p> : <></>}
                     <span className=" grid grid-cols-2 text-red-600 items-center">
-                        <p className="flex items-center text-lg font-semibold">&#x20b9;<p>{props.price}</p></p>
-                        <span>
+                        <p className={`flex items-center text-lg font-semibold ${onHots ? "text-white text-2xl" : ""}`}>&#x20b9;<p>{props.price}</p></p>
+                        <span className={`display: ${onHots ? "hidden" : "block"}`}>
                              <span className="text-md material-symbols-rounded cursor-pointer mx-1 w-max float-end" title="Add to Favorites" onClick={(e)=>addfav(e.target)}>favorite</span>
                         </span>
                     </span>
 
                     <span className="px-1 py-0.5">
-                    <button className="bg-red-400 hover:bg-red-500 flex items-center gap-2 py-2 px-3 rounded-md w-max float-end" onClick={(e)=>{constItem(e.target)}}>
+                    <button className={`${onHots ? " bg-red-600 shadow" : "bg-red-400"} ${onHots ? "hover:bg-orange-400":"hover:bg-red-500"} flex items-center py-2 px-3 rounded-md w-max float-end`} onClick={(e)=>{constItem(e.target)}}>
                         Add Item<span className="material-symbols-rounded">add_shopping_cart</span>
                     </button>
                     </span>

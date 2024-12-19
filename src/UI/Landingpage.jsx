@@ -7,6 +7,10 @@ function Landingpage(){
                     width:"100%",
                     }
 
+    function showLoader(){
+        alert("Hello world")
+    }
+
     return(<div className="landingpage grid grid-cols-2" style={styles}>
             <div className="flex flex-col px-12 h-full ">
                 <span className="mt-28">

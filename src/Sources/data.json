@@ -6,35 +6,35 @@
     "name":"Beef Burger",
     "price":120,
     "desc":"Italiano Beef burger With Cheese and Mustard",
-    "category":"burgers"
+    "category":"hotdeals"
 },{ 
     "id":2,
     "imagesrc":"https://static.vecteezy.com/system/resources/previews/046/791/327/non_2x/fried-chicken-with-mayonnaise-and-french-fries-free-png.png",
     "name":"Fries'n Chicken ",
     "desc":"Full plate Of Fries and Chicken (4) Pcs",
     "price":250,
-    "category":"combos"
+    "category":"hotdeals"
 },{ 
     "id":3,
     "imagesrc":"https://static.vecteezy.com/system/resources/previews/041/645/687/non_2x/ai-generated-fried-chicken-in-paper-bucket-on-transparent-background-image-free-png.png",
     "name":"Chicken Popcorn",
     "desc":"A whole Bucket'O chicken Drumsticks (8) Pcs",
     "price":165,
-    "category":"lunch"
+    "category":"hotdeals"
 },{ 
     "id":4,
     "imagesrc":"https://static.vecteezy.com/system/resources/previews/032/322/171/non_2x/image-of-delicious-looking-fajitas-ai-generated-free-png.png",
     "name":"Italian Burrito",
     "desc":"Famous italian Burrito With Beef Pieces wrapped",
     "price":80,
-    "category":"lunch"
+    "category":"hotdeals"
 },{
     "id":5,
     "imagesrc":"https://static.vecteezy.com/system/resources/previews/048/936/308/non_2x/bowl-of-rice-with-vegetables-in-a-black-bowl-free-png.png",
     "name":"Egg-Fried Rice",
     "desc":"Plain Egg Fried Rice Medium Spices",
     "price":90,
-    "category":"veg"
+    "category":"hotdeals"
 },{
     "id":6,
     "imagesrc":"https://static.vecteezy.com/system/resources/previews/025/140/288/non_2x/chocolate-milkshake-on-plastic-cup-transparent-background-ai-generated-free-png.png",
@@ -99,7 +99,7 @@
             "name":"Strawberry Smoothie",
             "desc":"Just a Chill Strawberry Smoothie for a chill Day innit",
             "price":120,
-            "category":"creams"
+            "category":"lunch"
         },{
             "id":15,
             "imagesrc":"https://static.vecteezy.com/system/resources/previews/048/363/440/non_2x/national-cheeseburger-day-isolated-on-transparent-background-free-png.png",
@@ -113,13 +113,13 @@
             "name":"Chilli Cheese Fries",
             "desc":"cheese Fries With Mexican Spices Medium",
             "price":85,
-            "category":"lunch"
+            "category":"hotdeals"
         },{
             "id":17,
             "imagesrc":"https://static.vecteezy.com/system/resources/previews/052/244/428/non_2x/tray-of-assorted-fried-chicken-on-a-transparent-background-free-png.png",
             "name":"Chicken mania",
             "desc":"Pack of Drumsticks Just For You (12 pcs)",
-            "price":"110",
-            "category":"hotdeals"
+            "price":110,
+            "category":"combos"
         }
     ]}
