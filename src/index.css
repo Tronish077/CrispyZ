@@ -151,13 +151,12 @@
 }
 
 .Itemsplace{
-  background: white;
+  background: rgb(255, 255, 255);
   margin-top:1vh;
   height:560px;
   overflow-y: scroll;
   display:flex;
   padding:8px;
-  align-content: start;
   flex-wrap:wrap;
   width: 100%;
   gap:10px;

@@ -33,7 +33,7 @@ function Itemsplace(){
 
                 //Render all Items except hotdeals
             else if(apidata.length > 0){
-                return(<div className="Itemsplace">
+                return(<div className="Itemsplace content-start">
                         
                             { 
                                 items.map((item)=>{
@@ -63,7 +63,7 @@ function Itemsplace(){
                 //Use Loader Screen On Items Delay
             else{
 
-        return(<div className="Itemsplace flex flex-col items-center justify-center  gap-6">
+        return(<div className="Itemsplace flex flex-col items-center justify-center">
                                 <MutatingDots
                     visible={true}
                     height="100"
