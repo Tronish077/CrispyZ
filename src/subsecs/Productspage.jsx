@@ -1,7 +1,7 @@
 import Searchcomp from "../Components/Searchcomp";
 import Categories from "../Components/Categories";
 import Itemsplace from "../UI/Itemsplace";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect} from "react";
 import { apiinfo } from "../Contexts/apiinfo";
 import { dummyapi } from "../Contexts/apiinfo";
 function Productspage(){

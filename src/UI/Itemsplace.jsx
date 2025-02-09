@@ -61,24 +61,30 @@ function Itemsplace(){
             )}
 
                 //Use Loader Screen On Items Delay
-            else{
+            else if(apidata.length === 0){
+                return(<div className="Itemsplace flex flex-col items-center justify-center  gap-6">
+                    <h2 className="text-black text-2xl">No Matching Product Found !!</h2>
+                   <img src={noItems} className="h-80"/>
+               </div>)
+            }else{
+                                return(<div className="Itemsplace flex flex-col items-center justify-center">
+                                    <MutatingDots
+                        visible={true}
+                        height="100"
+                        width="100"
+                        color="rgb(220 38 38)"
+                        secondaryColor="black"
+                        radius="11.5"
+                        ariaLabel="mutating-dots-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        />
 
-        return(<div className="Itemsplace flex flex-col items-center justify-center">
-                                <MutatingDots
-                    visible={true}
-                    height="100"
-                    width="100"
-                    color="rgb(220 38 38)"
-                    secondaryColor="black"
-                    radius="11.5"
-                    ariaLabel="mutating-dots-loading"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                    />
-
-                    <p className="text-red-600 text-lg">Fetching Products . . .</p>
-        </div>)
-    }}
+                        <p className="text-red-600 text-lg">Fetching Products . . .</p>
+                </div>)
+                }
+            }
+    
 
 
 export default Itemsplace;

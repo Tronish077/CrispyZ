@@ -5,7 +5,7 @@ import { totalcontext } from "../Contexts/totalscontext";
 function Cartcard(props) {
     const { cart, setcart } = useContext(cartcontext);
     const [count, setcount] = useState(1);
-    const { subtotal, setsubtotal } = useContext(totalcontext);
+    const {setsubtotal } = useContext(totalcontext);
 
     // Calculate total for this item
     const Total = props.price * count;
