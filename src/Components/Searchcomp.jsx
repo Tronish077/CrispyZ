@@ -1,5 +1,4 @@
 import { useState,useContext } from "react";
-import { Link } from "react-router-dom";
 import { apiinfo,dummyapi } from "../Contexts/apiinfo";
 
 function Searchcomp(){
