@@ -259,3 +259,12 @@
   align-items: center;
   height:19.05vh;
 }
+
+.srcbtn{
+  padding:6px 8px;
+  background: rgb(220 38 38);
+  border-radius: 5px;
+  color:white;
+  font-weight: 300;
+  cursor: pointer;
+}

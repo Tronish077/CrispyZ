@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Sidemenu(){
 
     const [selected,setSelected] = useState("l1");
-    const {currentcat,setcurrentcat} = useContext(getcategory);
+    const {setcurrentcat} = useContext(getcategory);
 
     function makeHighlight(id){
         setSelected(id)
