@@ -77,12 +77,12 @@ function Cardproduct(props){
                     />
 
                 <span className="flex flex-col">
-                    <p className=" name text-black">{props.name}</p>
-                    <p className={`text-xs ${ onHots ? "text-zinc-100" :"text-zinc-400"} text-light`}>{props.desc}</p>
+                    <label className=" name text-black">{props.name}</label>
+                    <label className={`text-xs ${ onHots ? "text-zinc-100" :"text-zinc-400"} text-light`}>{props.desc}</label>
 
                     { onHots ? <p className=" special text-green-200 w-max  radius-medium">Todays Deal !! 🔥</p> : <></>}
                     <span className=" grid grid-cols-2 text-red-600 items-center">
-                        <p className={`flex items-center text-lg font-semibold ${onHots ? "text-white text-2xl" : ""}`}>&#x20b9;<p>{props.price}</p></p>
+                        <span className={`flex items-center text-lg font-semibold ${onHots ? "text-white text-2xl" : ""}`}>&#x20b9;<p>{props.price}</p></span>
                         <span className={`display: ${onHots ? "hidden" : "block"}`}>
                              <span className="text-md material-symbols-rounded cursor-pointer mx-1 w-max float-end" title="Add to Favorites" onClick={(e)=>addfav(e.target)}>favorite</span>
                         </span>
