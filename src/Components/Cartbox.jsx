@@ -69,7 +69,7 @@ function Cartbox(){
 
                 <span className="bg-gray-100 mt-4 rounded p-2">
                     <table className="text-black breakdown">
-
+                        <tbody>
                         <tr>
                             <td>Cart Items</td>
                             <td className="text-right">{cart.length}</td>
@@ -84,16 +84,18 @@ function Cartbox(){
                             <td>Tax(18.5%)</td>
                             <td className="text-right">&#x20b9; {Math.round(subtotal * 0.185)}</td>
                         </tr>
+                        </tbody>
                     </table>
 
                     <hr className="linebreak"></hr>
 
                     <table className="text-black font-semibold w-full">
-                        
+                        <tbody>
                         <tr>
                             <td className="text-xl">Total Amount</td>
                             <td className="text-right text-xl">{formatCurrency(Math.round(subtotal * 0.185) + subtotal)}</td>
                         </tr>
+                        </tbody>
                     </table>
                 </span>
 
