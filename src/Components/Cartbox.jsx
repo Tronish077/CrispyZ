@@ -18,7 +18,8 @@ function Cartbox(){
     useEffect(()=>{
         if(cart.length > 0){
             setCartEmpty(false);
-            setcheckout(true) }
+            setcheckout(true) 
+        }
             else{
                  setCartEmpty(true);
                  setcheckout(false);
@@ -104,7 +105,7 @@ function Cartbox(){
 
                         const obj = [{
                             icon:"payments", title:"Cash"
-                        },{icon:"credit_card", title:"Card"},
+                        },{icon:"credit_card", title:"Credit Card"},
                         {icon:"qr_code_2",title:"UPI"}]
 
                         const highlight = selected === id;
